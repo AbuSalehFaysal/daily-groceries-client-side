@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
 import Products from './Components/Products/Products';
