@@ -36,7 +36,7 @@ const Checkout = () => {
         setSelectedDate(newDates);
     };
 
-    const handleBooking = () => {
+    const handleOrder = () => {
         const newOrder = {...loggedInUser, ...product, ...selectedDate}
         fetch("http://localhost:5000/addOrder", {
             method: "POST",
@@ -61,7 +61,7 @@ const Checkout = () => {
                         format="dd/MM/yyyy"
                         margin="normal"
                         id="date-picker-inline"
-                        label="Check In Date"
+                        label="Order Date"
                         value={selectedDate.orderDate}
                         onChange={handleOrderDate}
                         KeyboardButtonProps={{
@@ -69,7 +69,7 @@ const Checkout = () => {
                         }}
                     />
                 </Grid>
-                <Button onClick={handleBooking} variant="primary">Place Order</Button>
+                <Button onClick={handleOrder} variant="primary">Place Order</Button>
             </MuiPickersUtilsProvider>
             
         </div>
