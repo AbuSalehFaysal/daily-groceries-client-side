@@ -29,7 +29,7 @@ function App() {
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/orders">Orders</Nav.Link>
-            <Nav.Link href="http://localhost:5000/">Admin</Nav.Link>
+            <Nav.Link href="https://secure-hollows-18485.herokuapp.com">Admin</Nav.Link>
             <Nav.Link href="/deals">Deals</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/login">{loggedInUser.name}</Nav.Link>
