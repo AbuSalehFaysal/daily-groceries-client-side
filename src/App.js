@@ -10,7 +10,10 @@ import {
 import Orders from './Components/Orders/Orders';
 import Deals from './Components/Deals/Deals';
 import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
+import Book from './Components/Checkout/Checkout';
+import Checkout from './Components/Checkout/Checkout';
 
 export const UserContext = createContext();
 
@@ -29,7 +32,7 @@ function App() {
             <Nav.Link href="http://localhost:5000/">Admin</Nav.Link>
             <Nav.Link href="/deals">Deals</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
-            {/* <Nav.Link href="/login">{loggedInUser.name}</Nav.Link> */}
+            <Nav.Link href="/login">{loggedInUser.name}</Nav.Link>
           </Nav>
         </Navbar>
 
@@ -45,9 +48,9 @@ function App() {
           <Route path="/Login">
             <Login />
           </Route>
-          {/* <PrivateRoute path="/book/:transportationType">
-            <Book />
-          </PrivateRoute> */}
+          <PrivateRoute path="/checkout/:id">
+            <Checkout />
+          </PrivateRoute>
           {/* <PrivateRoute path="/book/:transportationType">
             <Book />
           </PrivateRoute> */}
