@@ -1,26 +1,63 @@
 import './App.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import Products from './Components/Products/Products';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Orders from './Components/Orders/Orders';
+import Deals from './Components/Deals/Deals';
+import Login from './Components/Login/Login';
+import { createContext, useState } from 'react';
+
+export const UserContext = createContext();
 
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Daily Groceries</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <Router>
+      <div>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="/">Daily Grroceries</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Orders</Nav.Link>
-            <Nav.Link href="#link">Admin</Nav.Link>
-            <Nav.Link href="#link">Deals</Nav.Link>
-            <Nav.Link href="#link">Login</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/orders">Orders</Nav.Link>
+            <Nav.Link href="http://localhost:5000/">Admin</Nav.Link>
+            <Nav.Link href="/deals">Deals</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            {/* <Nav.Link href="/login">{loggedInUser.name}</Nav.Link> */}
           </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-      <Products></Products>
-    </div>
+        </Navbar>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+          <Route path="/deals">
+            <Deals />
+          </Route>
+          <Route path="/Login">
+            <Login />
+          </Route>
+          {/* <PrivateRoute path="/book/:transportationType">
+            <Book />
+          </PrivateRoute> */}
+          {/* <PrivateRoute path="/book/:transportationType">
+            <Book />
+          </PrivateRoute> */}
+          <Route path="/">
+            <Products />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+    </UserContext.Provider>
   );
 }
 
