@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
 import Checkout from './Components/Checkout/Checkout';
+import Admin from './Components/Admin/Admin';
 
 export const UserContext = createContext();
 
@@ -24,7 +25,6 @@ function App() {
     <Router>
       <div>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">Daily Grroceries</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav>
               <Link  style={{margin: '15px'}} to="/">Home</Link>
@@ -38,9 +38,12 @@ function App() {
             <Nav>
               <Link style={{margin: '15px'}}  to="/login">Login</Link>
             </Nav>
+            <Nav>
+              <Link style={{margin: '15px'}}  to="/admin">Admin</Link>
+            </Nav>
             {/* <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/orders">Orders</Nav.Link> */}
-            <Nav.Link href="https://secure-hollows-18485.herokuapp.com">Admin</Nav.Link>
+            {/* <Nav.Link href="https://secure-hollows-18485.herokuapp.com">Admin</Nav.Link> */}
             {/* <Nav.Link href="/deals">Deals</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             <Nav.Link href="/login">{loggedInUser.name}</Nav.Link> */}
@@ -59,6 +62,9 @@ function App() {
           <Route path="/Login">
             <Login />
           </Route>
+          <PrivateRoute path="/admin">
+            <Admin />
+          </PrivateRoute>
           <PrivateRoute path="/checkout/:id">
             <Checkout />
           </PrivateRoute>
