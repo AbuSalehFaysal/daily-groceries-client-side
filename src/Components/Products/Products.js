@@ -14,7 +14,7 @@ const Products = () => {
         <div className="text-center">
             <h1 className="text-center display-1">Welcome to Daily Grocery Shopping</h1>
             {
-                products.length === 0 && <Spinner animation="border" role="status">
+                products.length === 0 && <Spinner size="lg" animation="border" role="status">
                     
                 </Spinner>
             }
