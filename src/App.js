@@ -4,7 +4,8 @@ import Products from './Components/Products/Products';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 import Orders from './Components/Orders/Orders';
 import Deals from './Components/Deals/Deals';
@@ -25,12 +26,24 @@ function App() {
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand href="/">Daily Grroceries</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/orders">Orders</Nav.Link>
+            <Nav>
+              <Link  style={{margin: '15px'}} to="/">Home</Link>
+            </Nav>
+            <Nav>
+              <Link  style={{margin: '15px'}} to="/orders">Orders</Link>
+            </Nav>
+            <Nav>
+              <Link  style={{margin: '15px'}} to="/deals">Deals</Link>
+            </Nav>
+            <Nav>
+              <Link style={{margin: '15px'}}  to="/login">Login</Link>
+            </Nav>
+            {/* <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/orders">Orders</Nav.Link> */}
             <Nav.Link href="https://secure-hollows-18485.herokuapp.com">Admin</Nav.Link>
-            <Nav.Link href="/deals">Deals</Nav.Link>
+            {/* <Nav.Link href="/deals">Deals</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/login">{loggedInUser.name}</Nav.Link>
+            <Nav.Link href="/login">{loggedInUser.name}</Nav.Link> */}
           </Nav>
         </Navbar>
 
