@@ -50,7 +50,7 @@ const Checkout = () => {
     return (
         <div className="container text-center">
             <h1>This is Checkout Route</h1>
-            <h1>{name} -- {price} -- {quantity}</h1>
+            <h1>{name} -- {price} BDT -- {quantity} (Quantity / Weight)</h1>
             
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Grid container justify="space-around">
