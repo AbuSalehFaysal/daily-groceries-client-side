@@ -37,7 +37,7 @@ const Checkout = () => {
 
     const handleOrder = () => {
         const newOrder = {...loggedInUser, ...product, ...selectedDate}
-        fetch("http://localhost:5000/addOrder", {
+        fetch("https://secure-hollows-18485.herokuapp.com/addOrder", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newOrder)
