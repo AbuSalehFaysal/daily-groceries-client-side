@@ -12,13 +12,13 @@ const ProductList = (props) => {
         <div className="text-center">
             <Container>
                 <Row>
-                    <Col style={{ backgroundColor: "#FCF6F5FF" }} xs={12} md={6}><Image src={imgURL} fluid /></Col>
+                    <Col style={{ backgroundColor: "#FCF6F5FF" }} xs={12} md={6}><Image width="200" height="200" src={imgURL} fluid /></Col>
                     <Col style={{ backgroundColor: "#89ABE3FF" }} xs={12} md={6}>
                         <br/>
                         <br/>
-                        <h1>Product Name: {name}</h1>
-                        <h1>Product Price: {price}</h1>
-                        <h1>Product Quantity/Weight: {quantity}</h1>
+                        <h6>Product Name: {name}</h6>
+                        <h6>Product Price: {price}</h6>
+                        <h6>Product Quantity/Weight: {quantity}</h6>
                         <br/>
                         <Button onClick={() => handleCheckout(_id)} variant="primary" size="lg">BUY NOW!</Button>
                         <br/>
