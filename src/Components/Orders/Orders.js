@@ -11,8 +11,7 @@ const Orders = () => {
     }, [])
     return (
         <div className="conatiner text-center">
-            <h1>THIS IS ORDERS ROUTE!!!</h1>
-            <h1>You have {orders.length} Orders</h1>
+            <h1 className="display-3">You have {orders.length} Orders</h1>
             {
                 orders.map(order => <li>{order.name} -- {order.price} -- {order.quantity} -- {(new Date(order.orderDate).toDateString('dd/MM/yyyy'))}</li>)
             }
