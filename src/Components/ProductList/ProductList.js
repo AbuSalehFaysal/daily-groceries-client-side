@@ -18,8 +18,9 @@ const ProductList = (props) => {
                         <br/>
                         <h1>Product Name: {name}</h1>
                         <h1>Product Price: {price}</h1>
-                        <h1>Product Quantity: {quantity}</h1>
-                        <Button onClick={() => handleCheckout(_id)} variant="primary">Buy</Button>
+                        <h1>Product Quantity/Weight: {quantity}</h1>
+                        <br/>
+                        <Button onClick={() => handleCheckout(_id)} variant="primary" size="lg">BUY NOW!</Button>
                         <br/>
                         <br/>
                     </Col>
