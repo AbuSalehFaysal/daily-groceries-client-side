@@ -4,7 +4,6 @@ import { useParams } from 'react-router';
 import { UserContext } from '../../App';
 import {
     MuiPickersUtilsProvider,
-    KeyboardTimePicker,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import { Button } from '@material-ui/core';

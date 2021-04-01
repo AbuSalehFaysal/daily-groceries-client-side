@@ -4,15 +4,13 @@ import Products from './Components/Products/Products';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Orders from './Components/Orders/Orders';
 import Deals from './Components/Deals/Deals';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
-import Book from './Components/Checkout/Checkout';
 import Checkout from './Components/Checkout/Checkout';
 
 export const UserContext = createContext();
@@ -39,9 +37,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/orders">
+          <PrivateRoute path="/orders">
             <Orders />
-          </Route>
+          </PrivateRoute>
           <Route path="/deals">
             <Deals />
           </Route>
