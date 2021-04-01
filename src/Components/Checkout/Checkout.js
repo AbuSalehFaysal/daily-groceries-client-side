@@ -48,7 +48,7 @@ const Checkout = () => {
         })
     }
     return (
-        <div>
+        <div className="container text-center">
             <h1>This is Checkout Route</h1>
             <h1>{name} -- {price} -- {quantity}</h1>
             
@@ -68,7 +68,7 @@ const Checkout = () => {
                         }}
                     />
                 </Grid>
-                <Button onClick={handleOrder} variant="primary">Place Order</Button>
+                <Button onClick={handleOrder} variant="contained" color="primary">Place Order</Button>
             </MuiPickersUtilsProvider>
             
         </div>

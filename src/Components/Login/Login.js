@@ -63,9 +63,9 @@ const Login = () => {
             });
     }
     return (
-        <div>
-            <h1>THIS IS LOGIN ROUTE</h1>
-            <Button onClick={handleGoogleSignIn} variant="outline-danger">Continue With Google</Button>
+        <div className="container text-center">
+            <h1 className="display-1">Please, Login Here!</h1>
+            <Button onClick={handleGoogleSignIn} variant="outline-danger" size="lg" block>Continue With Google</Button>
         </div>
     );
 };

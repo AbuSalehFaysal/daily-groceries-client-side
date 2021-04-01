@@ -10,7 +10,7 @@ const Orders = () => {
         .then(data => setOrders(data))
     }, [])
     return (
-        <div>
+        <div className="conatiner text-center">
             <h1>THIS IS ORDERS ROUTE!!!</h1>
             <h1>You have {orders.length} Orders</h1>
             {
